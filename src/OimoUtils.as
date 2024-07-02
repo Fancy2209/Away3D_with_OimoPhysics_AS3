@@ -1,8 +1,5 @@
 package
 {
-
-    import flash.utils.getQualifiedClassName;
-
     import away3d.entities.Mesh;
     import away3d.primitives.CapsuleGeometry;
     import away3d.primitives.CubeGeometry;

@@ -57,7 +57,7 @@ package
 	import away3d.debug.AwayStats;
 	import oimo.collision.broadphase.BroadPhaseType;
 
-
+	[SWF(width="1024", height="768", frameRate="60", backgroundColor="#000000")]
 	public class OimoExamplesAS3 extends Sprite {
 		
 		//engine variables
@@ -83,6 +83,7 @@ package
 		 * Constructor
 		 */
 		public function OimoExamplesAS3() {
+			//DO THIS OR IT WON'T WORK!
 			haxe.initSwc(null);
 			
 			stage.scaleMode = StageScaleMode.NO_SCALE;
