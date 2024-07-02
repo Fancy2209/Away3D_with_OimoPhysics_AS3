@@ -40,22 +40,22 @@ package
 {
 
 	import away3d.containers.*;
+	import away3d.debug.AwayStats;
 	import away3d.entities.*;
 	import away3d.materials.*;
 	import away3d.primitives.*;
 	import away3d.utils.*;
-	import oimo.dynamics.rigidbody.RigidBodyType;
 
 	import flash.display.*;
 	import flash.events.*;
 	import flash.geom.Vector3D;
 
-	import oimo.dynamics.World;
-	import oimo.common.Vec3;
-	import oimo.common.MathUtil;
-	import oimo.dynamics.rigidbody.RigidBody;
-	import away3d.debug.AwayStats;
 	import oimo.collision.broadphase.BroadPhaseType;
+	import oimo.common.MathUtil;
+	import oimo.common.Vec3;
+	import oimo.dynamics.World;
+	import oimo.dynamics.rigidbody.RigidBody;
+	import oimo.dynamics.rigidbody.RigidBodyType;
 
 	[SWF(width="1024", height="768", frameRate="60", backgroundColor="#000000")]
 	public class OimoExamplesAS3 extends Sprite {
