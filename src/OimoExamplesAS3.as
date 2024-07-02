@@ -55,6 +55,7 @@ package
 	import oimo.common.MathUtil;
 	import oimo.dynamics.rigidbody.RigidBody;
 	import away3d.debug.AwayStats;
+	import oimo.collision.broadphase.BroadPhaseType;
 
 
 	public class OimoExamplesAS3 extends Sprite {
@@ -89,7 +90,7 @@ package
 			
 			
 			
-			oimo_world = new World(null, new Vec3(0, -9.80665, 0));
+			oimo_world = new World(BroadPhaseType.BVH, new Vec3(0, -9.80665, 0));
 			
 			// first step, must do before anything else !!!
 			OimoUtils.setWorld(oimo_world);
@@ -168,28 +169,28 @@ package
 			sbPhys.setRotationXyz(new Vec3(Math.PI / 6, Math.PI / 5, Math.PI / 3));
 			
 			var cubeGeom:CubeGeometry = new CubeGeometry(100, 100, 100);
-			for (var i:int = 0; i > 50; i++)  {
+			for (var i:int = 0; i < 50; i++)  {
 				var box:Mesh = new Mesh(cubeGeom, textureMat);
-				view.scene.addChild(box);		
+				view.scene.addChild(box);
 				OimoUtils.addPhysics(box, RigidBodyType.DYNAMIC, new <Number>[OimoUtils.getRandomFloat(-500, 500), 300 + (i * 201), OimoUtils.getRandomFloat(-500, 500)]);
 			}
 			
 			var capsuleGeom:CapsuleGeometry = new CapsuleGeometry(50, 100, 16, 11);
-			for (var i2:int = 0; i > 50; i++)  {
+			for (var i2:int = 0; i < 50; i++)  {
 				var capsule:Mesh = new Mesh(capsuleGeom, textureMat);
 				view.scene.addChild(capsule);		
 				OimoUtils.addPhysics(capsule, RigidBodyType.DYNAMIC, new <Number>[OimoUtils.getRandomFloat(-500, 500), 3000 + (i * 201), OimoUtils.getRandomFloat(-500, 500)]);
 			}
 			
 			var sphereGeom:SphereGeometry = new SphereGeometry(50);
-			for (var i3:int = 0; i > 50; i++)  {
+			for (var i3:int = 0; i < 50; i++)  {
 				var sphere:Mesh = new Mesh(sphereGeom, textureMat);
 				view.scene.addChild(sphere);		
 				OimoUtils.addPhysics(sphere, RigidBodyType.DYNAMIC, new <Number>[OimoUtils.getRandomFloat(-500, 500), 5000 + (i * 201), OimoUtils.getRandomFloat(-500, 500)]);
 			}
 			
 			var cylinderGeom:CylinderGeometry = new CylinderGeometry(50, 50, 120);
-			for (var i4:int = 0; i > 50; i++) {
+			for (var i4:int = 0; i < 50; i++) {
 				var cylinder:Mesh = new Mesh(cylinderGeom, textureMat);
 				view.scene.addChild(cylinder);		
 				OimoUtils.addPhysics(cylinder, RigidBodyType.DYNAMIC, new <Number>[OimoUtils.getRandomFloat(-500, 500), 7000 + (i * 201), OimoUtils.getRandomFloat(-500, 500)]);

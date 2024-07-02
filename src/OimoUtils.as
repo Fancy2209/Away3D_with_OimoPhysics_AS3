@@ -1,26 +1,19 @@
 package
 {
 
-    import away3d.core.math.Quaternion;
+    import flash.utils.getQualifiedClassName;
+
     import away3d.entities.Mesh;
-    import away3d.primitives.CubeGeometry;
-    import away3d.primitives.SphereGeometry;
-    import away3d.primitives.PlaneGeometry;
     import away3d.primitives.CapsuleGeometry;
-    import away3d.primitives.ConeGeometry;
+    import away3d.primitives.CubeGeometry;
     import away3d.primitives.CylinderGeometry;
-    import away3d.primitives.TorusGeometry;
-    import flash.Lib;
-    import flash.geom.Orientation3D;
-    import flash.geom.Vector3D;
-    import flash.utils.Timer;
+    import away3d.primitives.SphereGeometry;
 
     import oimo.collision.geometry.*;
     import oimo.common.*;
     import oimo.dynamics.*;
     import oimo.dynamics.constraint.joint.*;
     import oimo.dynamics.rigidbody.*;
-    import avmplus.getQualifiedClassName;
 
 
     public class OimoUtils {
@@ -69,7 +62,7 @@ package
         }
         
         [inline]
-        public static  function addPhysics(mesh:Mesh, type:int = 0, pos:Vector.<Number> = null, colliderType:String = "", options:Dynamic = null):RigidBody {
+        public static function addPhysics(mesh:Mesh, type:int = 0, pos:Vector.<Number> = null, colliderType:String = "", options:Dynamic = null):RigidBody {
             if (pos == null) {
                 pos = new <Number>[0, 0, 0];
             }
@@ -80,7 +73,6 @@ package
             var rBody:RigidBody = null;
             
             if (colliderType == "") {
-                trace(getQualifiedClassName(mesh.geometry))
                 if (mesh.geometry is away3d.primitives.CubeGeometry) {
                     var cubeGeom:away3d.primitives.CubeGeometry = mesh.geometry as away3d.primitives.CubeGeometry;
                     tmpVec3_0.x = cubeGeom.width / 2;
